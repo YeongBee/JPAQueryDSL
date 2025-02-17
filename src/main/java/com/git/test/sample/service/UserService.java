@@ -6,4 +6,7 @@ public interface UserService {
 
     void initUser();
     UserEntity testQueryDSL(String email);
+
+    UserEntity testQueryDSL2(UserEntity user);
+
 }

@@ -17,8 +17,13 @@ public class UserController {
     @GetMapping("/")
     @ResponseBody
     public ResponseEntity<UserEntity> index() {
-        UserEntity user = userService.testQueryDSL("user4@example.com");
-        return ResponseEntity.ok(user);
+
+        UserEntity user = UserEntity.builder()
+//                .email("user3@example.com")
+                .pw("password3")
+                .build();
+        UserEntity user2 = userService.testQueryDSL2(user);
+        return ResponseEntity.ok(user2);
     }
 
 

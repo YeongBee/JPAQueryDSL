@@ -43,4 +43,9 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new EntityNotFoundException("User not found with email: " + email));
     }
 
+    @Override
+    public UserEntity testQueryDSL2(UserEntity userEntity) {
+        return userRepository.myFindByEmail(userEntity);
+    }
+
 }
